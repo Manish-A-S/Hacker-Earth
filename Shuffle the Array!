@@ -1,0 +1,17 @@
+def shuffle (n, arr):
+    ars=[]
+    for i in range(n):
+        ars.append(arr[i])
+        ars.append(arr[n+i])
+    return ars
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+out_ = shuffle(n, arr)
+print (' '.join(map(str, out_)))
+
+Sample Input
+3
+2 5 1 3 4 7
