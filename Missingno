@@ -1,0 +1,33 @@
+def missing_no (n, arr):
+    arr.sort()
+    for i in range(n):
+        if i+1!=arr[i]:
+            return i+1
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+out_ = missing_no(n, arr)
+print (out_)
+
+
+Input:
+4
+4 1 2
+
+
+def missing_no (n, arr):
+    sum=0
+    sums=(n*(n+1))//2
+    for i in arr:
+        sum+=i
+
+    return sums-sum
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+out_ = missing_no(n, arr)
+print (out_)
