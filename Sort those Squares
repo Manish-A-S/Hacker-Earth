@@ -1,0 +1,17 @@
+def sort_square (n, arr):
+    ars=[]
+    for i in arr:
+        ars.append(i*i)
+    ars.sort()
+    return ars
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+out_ = sort_square(n, arr)
+print (' '.join(map(str, out_)))
+
+Sample Input
+5
+-4 -1 0 3 10
