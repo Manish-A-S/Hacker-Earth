@@ -1,0 +1,45 @@
+def remove_pair (str):
+    lis=list(str)
+    n=len(lis)-1
+    i=1
+    while i<n:
+            if lis[i]==lis[i+1]:
+                lis.pop(i)
+                lis.pop(i)
+                n-=2
+                i-=2
+            if i<0:
+               i=0
+            if  lis[i-1]==lis[i]:
+                lis.pop(i)
+                lis.pop(i-1)
+                n-=2
+                i-=2
+            i+=1
+            if i<0:
+               i=0
+    lis=''.join(lis)
+    return lis
+    pass
+
+str = input()
+
+out_ = remove_pair(str)
+print (out_)
+
+
+Sample Input
+abcddce
+
+
+stack=[]
+stack.append(str[0])
+top=0
+for i in range(1,len(str)):
+    if top>=0 and str[i]==stack[top]:
+        top-=1
+        stack.pop()
+    else:
+        top+=1
+        stack.append(str[i])
+return "".join(stack)
