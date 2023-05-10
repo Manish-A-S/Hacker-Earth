@@ -1,0 +1,39 @@
+def is_lexicographic (key, n, str):
+    lis=list(key)
+    dic={}
+    for i in range(26):
+        dic.setdefault(key[i],i)
+
+    for i in range(len(str)-1):
+        if dic[str[i][0]]<dic[str[i+1][0]]:
+            continue
+        elif dic[str[i][0]]==dic[str[i+1][0]]:
+            if len(str[i])>len(str[i+1]):
+                return 0
+            j=1
+            while dic[str[i][j]]==dic[str[i+1][j]]:
+                j+=1
+            if dic[str[i][j]]<dic[str[i+1][j]]:
+                continue
+            else:
+                return 0
+        else:
+            return 0
+    return 1
+    pass
+
+key = input()
+n = int(input())
+str = []
+for _ in range(n):
+    str.append(input())
+
+out_ = is_lexicographic(key, n, str)
+print (out_)
+
+Sample Input
+HECABDFGIJKLMNOPQRSTUVWXYZ
+3
+HACKER
+EARTHS
+CODEXPLAINED
