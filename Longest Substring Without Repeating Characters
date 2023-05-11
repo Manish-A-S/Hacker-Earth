@@ -1,0 +1,27 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        count=0
+        subcount=0
+        dic={}
+        i=0
+        while i<len(s):
+            flag=0
+            if dic.get(s[i],-1)==-1:
+                subcount+=1
+                dic.setdefault(s[i],i)
+            else:
+                if count<subcount:
+                    count=subcount
+                subcount=0
+                i=dic[s[i]]
+                dic={}
+                    
+                    
+            i+=1
+        
+        if count<subcount:
+            count=subcount
+            subcount=0
+        return count
+Input: s = "abcabcbb"
+Output: 3
