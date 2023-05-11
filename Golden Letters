@@ -1,0 +1,22 @@
+
+def golden_char (key, str):
+    dic={}
+    count=0
+    for i in key:
+        dic.setdefault(i,0)
+    for i in str:
+        if dic.get(i,-1)!=-1:
+            count+=1
+    return count
+    pass
+
+key = input()
+str = input()
+
+out_ = golden_char(key, str)
+print (out_)
+
+
+Sample Input
+wxYZ
+lmnoWwwxyZ
