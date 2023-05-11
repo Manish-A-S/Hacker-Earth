@@ -1,0 +1,19 @@
+def good_pairs (n, arr):
+    dic={}
+    count=0
+    for i in arr:
+        dic.setdefault(i,0)
+        count+=dic[i]
+        dic[i]+=1
+    return count
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+out_ = good_pairs(n, arr)
+print (out_)
+
+Sample Input
+6
+1 2 3 1 1 3
