@@ -1,0 +1,28 @@
+def two_sum (n, arr, target):
+    dic={}
+    count=0
+    for i in arr:
+         if dic.get(target-i,-1)!=-1:
+            if i!=target-i:
+                count+=max(dic.get(target-i,-1),dic.get(i,-1))
+            else:
+                count+=dic.get(i,-1)
+         if i<=target:
+            dic.setdefault(i,0)
+            dic[i]+=1
+    return count
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+target = int(input())
+
+out_ = two_sum(n, arr, target)
+print (out_)
+
+
+
+Sample Input
+6
+1 2 3 2 9 10
+4
