@@ -1,0 +1,36 @@
+
+def next_permutation (n, arr):
+    var=arr.copy()
+    var.sort(reverse=True)
+    if var==arr:
+        return reversed(var)
+    else:
+        for i in range(n-1,0,-1):
+            for j in range(i,0,-1):
+                if arr[i]>arr[j]:
+                    break
+            if arr[i]>arr[j]:
+                    break
+        temp=arr.pop(i)
+        arr.insert(j,temp)
+        one=arr[:j+1]
+        two=arr[j+1:]
+        two.sort()
+        return one + two
+    pass
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+out_ = next_permutation(n, arr)
+print (' '.join(map(str, out_)))  
+
+
+
+Input:
+4
+1 2 3 4
+
+
+Output:
+1 2 4 3
