@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 def good_pairs (n, arr):
     dic={}
     count=0
